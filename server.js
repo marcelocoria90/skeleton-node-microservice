@@ -1,16 +1,17 @@
  
 // server.js
-import express from 'express';
-import { connectToOracleDB } from './apps/component-a/data-access/database';
-import apiRoutes from './apps/component-a/entry-points/api/routes';
+import express from 'express'
+import 'dotenv/config.js'
+import { connectToOracleDB } from './apps/cotizaciones/data-access/database.js'
+import apiRoutes from './apps/cotizaciones/entry-points/api/routes.js'
 
-const app = express();
-const port = 3000;
+const app = express()
+const PORT = process.env.PORT || 3008
 
-connectToOracleDB();
+connectToOracleDB()
 
-app.use('/api', apiRoutes); 
+app.use('/api', apiRoutes) 
 
-app.listen(port, () => {
-  console.log(`⚡ Server is running on port ${port} ⚡`);
-}); 
+app.listen(PORT, () => {
+  console.log(`⚡ Server is running on port ${PORT} ⚡`)
+}) 

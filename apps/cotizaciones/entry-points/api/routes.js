@@ -1,10 +1,9 @@
- 
 // apps/component-a/entry-points/api/routes.js
 import { Router } from 'express';
-import { getSomeData } from './controllers';
+import { getUsers } from './controllers.js';
 
 const router = Router();
 
-router.get('/data', getSomeData);
+router.get('/users', getUsers);
 
 export default router;
